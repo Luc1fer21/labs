@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Angular Component</h1>
+  <hr/>
+  <app-post-form
+(addPostUser)="updatePosts($event)"
+(titleSearch)="onChangeSearch($event)"
+  >
+</app-post-form>
+  <button class="btn" (click)="changefilter(1)">Filter Title</button>
+  <button class="btn" (click)="changefilter(0)">Filter Text</button>
+<hr/>
+<app-post *ngFor="let p of posts | filter: titleS"  [post]="p" (postid)="removeIdPost($event)"  >
+
+<ng-content> </ng-content>
